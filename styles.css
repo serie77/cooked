@@ -1,0 +1,499 @@
+/* Custom Font */
+@font-face {
+    font-family: 'LDF Comic Sans';
+    src: url('Ldfcomicsans-jj7l.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LDF Comic Sans';
+    src: url('Ldfcomicsansbold-zgma.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LDF Comic Sans';
+    src: url('Ldfcomicsanslight-6dZo.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'LDF Comic Sans', 'Comic Sans MS', cursive;
+    line-height: 1.6;
+    color: #2c2c2c;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1224px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 25%, #feca57 50%, #ff6b6b 75%, #ee5a6f 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 16px 100px 16px;
+    position: relative;
+    clip-path: ellipse(100% 100% at 50% 0%);
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.main-title {
+    font-size: clamp(50px, 12vw, 100px);
+    font-weight: bold;
+    color: #2c2c2c;
+    margin-bottom: 15px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    text-shadow: 4px 4px 0px #fff, 8px 8px 0px rgba(0,0,0,0.2);
+    animation: wobble 3s ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes wobble {
+    0%, 100% { transform: rotate(-2deg) scale(1); }
+    25% { transform: rotate(2deg) scale(1.02); }
+    50% { transform: rotate(-1deg) scale(1); }
+    75% { transform: rotate(1deg) scale(0.98); }
+}
+
+.slogan {
+    font-size: clamp(20px, 4vw, 32px);
+    font-weight: bold;
+    color: #2c2c2c;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0px #fff;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.hero-image {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-meme {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 50% 50% 45% 55% / 55% 45% 55% 45%;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+    border: 6px solid #fff;
+    animation: float 6s ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-20px) rotate(2deg); }
+    50% { transform: translateY(0px) rotate(0deg); }
+    75% { transform: translateY(-10px) rotate(-2deg); }
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #2c2c2c;
+    color: #fff;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-icon:hover {
+    background-color: #fff;
+    color: #2c2c2c;
+    transform: translateY(-5px) rotate(360deg);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Contract Address */
+.contract-address {
+    margin-top: 40px;
+    padding: 20px 35px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50px;
+    border: 4px solid #2c2c2c;
+    display: inline-block;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.ca-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ff6b6b;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+}
+
+.ca-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2c2c2c;
+    letter-spacing: 1px;
+    word-break: break-all;
+}
+
+/* About Section */
+.about {
+    background: linear-gradient(135deg, #feca57 0%, #ff9ff3 50%, #54a0ff 100%);
+    padding: 120px 16px 120px 16px;
+    position: relative;
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    margin-top: -70px;
+}
+
+.section-title {
+    font-size: clamp(36px, 8vw, 60px);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #2c2c2c;
+    letter-spacing: 4px;
+    text-shadow: 3px 3px 0px #fff, 6px 6px 0px rgba(0,0,0,0.1);
+    animation: wiggle 4s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-1deg); }
+    75% { transform: rotate(1deg); }
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 50px 40px;
+    border-radius: 30px;
+    border: 5px solid #2c2c2c;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.about-content p {
+    font-size: clamp(18px, 2.5vw, 22px);
+    margin-bottom: 28px;
+    line-height: 1.8;
+    color: #2c2c2c;
+    font-weight: normal;
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* TikTok Section */
+.tiktok-section {
+    margin-top: 80px;
+}
+
+.subsection-title {
+    font-size: clamp(28px, 6vw, 48px);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c2c2c;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 0px #fff;
+}
+
+.tiktok-description {
+    font-size: clamp(16px, 2vw, 20px);
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+    color: #2c2c2c;
+    line-height: 1.7;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 25px 30px;
+    border-radius: 20px;
+    border: 3px solid #2c2c2c;
+}
+
+.tiktok-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+.tiktok-embed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tiktok-embed blockquote {
+    margin: 0;
+}
+
+/* Origins Section */
+.origins {
+    background: linear-gradient(135deg, #48dbfb 0%, #ff9ff3 50%, #feca57 100%);
+    padding: 120px 16px 100px 16px;
+    position: relative;
+    clip-path: ellipse(150% 100% at 50% 0%);
+    margin-top: -100px;
+}
+
+.memes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 80px;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+.meme-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    animation: bounceIn 1s ease-out;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) rotate(-10deg);
+    }
+    50% {
+        transform: scale(1.05) rotate(5deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.meme-image {
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+    border: 6px solid #fff;
+    transition: all 0.4s ease;
+}
+
+.meme-image:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
+}
+
+.meme-button {
+    display: inline-block;
+    padding: 20px 40px;
+    background-color: #2c2c2c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    border: 4px solid #fff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+}
+
+.meme-button:hover {
+    background-color: #fff;
+    color: #2c2c2c;
+    border-color: #2c2c2c;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Final Section */
+.final {
+    background: linear-gradient(135deg, #ff6b6b 0%, #feca57 50%, #48dbfb 100%);
+    padding: 140px 16px 120px 16px;
+    text-align: center;
+    position: relative;
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+    margin-top: -100px;
+}
+
+.cooked-content {
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 60px 40px;
+    border-radius: 50px;
+    border: 6px solid #2c2c2c;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+}
+
+.large-text {
+    font-size: clamp(20px, 3.5vw, 32px);
+    margin-bottom: 30px;
+    color: #2c2c2c;
+    line-height: 1.6;
+    font-weight: normal;
+}
+
+.emphasis-text {
+    font-size: clamp(32px, 6vw, 56px);
+    font-weight: bold;
+    color: #ff6b6b;
+    letter-spacing: 4px;
+    margin-top: 20px;
+    text-shadow: 3px 3px 0px #2c2c2c;
+    animation: shake 2s ease-in-out infinite;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+    color: #fff;
+    padding: 80px 16px 50px 16px;
+    text-align: center;
+    clip-path: ellipse(150% 100% at 50% 100%);
+    margin-top: -80px;
+}
+
+.footer p {
+    margin-bottom: 0;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 85vh;
+        padding: 40px 16px 80px 16px;
+    }
+
+    .about {
+        padding: 100px 16px 100px 16px;
+        margin-top: -50px;
+    }
+
+    .origins {
+        padding: 100px 16px 100px 16px;
+        margin-top: -80px;
+    }
+
+    .final {
+        padding: 120px 16px 100px 16px;
+        margin-top: -80px;
+    }
+
+    .footer {
+        padding: 60px 16px 40px 16px;
+        margin-top: -60px;
+    }
+
+    .memes-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .tiktok-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .hero-meme {
+        max-width: 250px;
+    }
+
+    .meme-image {
+        max-width: 100%;
+    }
+
+    .social-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .social-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .contract-address {
+        padding: 18px 25px;
+    }
+
+    .ca-text {
+        font-size: 13px;
+    }
+
+    .about-content {
+        padding: 35px 25px;
+    }
+
+    .cooked-content {
+        padding: 40px 30px;
+    }
+
+    .tiktok-section {
+        margin-top: 60px;
+    }
+
+    .tiktok-description {
+        padding: 20px 20px;
+        margin-bottom: 40px;
+    }
+}
+
+/* Fun decorative elements */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
